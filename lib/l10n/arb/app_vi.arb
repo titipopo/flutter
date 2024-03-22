@@ -1,0 +1,14 @@
+{
+  "hello": "Xin Chào!",
+  "email": "Email",
+  "emailHint": "Nhập Tài Khoản",
+  "emailError": "Chưa Nhập Tài Khoản",
+  "password": "Password",
+  "passwordHint": "Nhập Mật Khẩu",
+  "passwordError": "Chưa Nhập Mật Khẩu",
+  "forgotPassword": "Quên Mật Khẩu?",
+  "newHere": "Chưa Có Tài Khoản? Đăng Ký",
+  "login": "Đăng Nhập",
+  "register": "Đăng Ký",
+  "hasAccount": "Đã Có Tài Khoản? Đăng Nhập"
+}

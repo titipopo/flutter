@@ -1,0 +1,50 @@
+{
+  "hello": "Welcome Back!",
+  "@hello": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email"
+  },
+  "emailHint": "Enter your email",
+  "@emailHint": {
+    "description": "Email placeholder"
+  },
+  "emailError": "Please fill Email",
+  "@emailError": {
+    "description": "Email not valid"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password"
+  },
+  "passwordHint": "Enter your password",
+  "@passwordHint": {
+    "description": "Password placeholder"
+  },
+  "passwordError": "Please fill Password",
+  "@passwordError": {
+    "description": "Password not valid"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Forgot password"
+  },
+  "newHere": "New Here? Register",
+  "@register": {
+    "description": "Create acount"
+  },
+  "login": "Log in",
+  "@login": {
+    "description": "Log in"
+  },
+  "register": "Register",
+  "@login": {
+    "description": "Register"
+  },
+  "hasAccount": "Already have an account? Log in",
+  "@login": {
+    "description": "Already have an account? Log in"
+  }
+}
