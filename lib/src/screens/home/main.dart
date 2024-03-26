@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
+        body: SafeArea(
           child: TabList.tabs.elementAt(_selectedIndex),
         ),
         bottomNavigationBar: BottomNavigationBar(

@@ -28,9 +28,11 @@ const List<String> _months = <String>[
 ];
 
 class CalendarWidget extends StatefulWidget {
-  const CalendarWidget({super.key, required this.now});
+  const CalendarWidget(
+      {super.key, required this.now, required this.notifyParent});
 
   final DateTime now;
+  final Function(dynamic newDate) notifyParent;
 
   @override
   State<CalendarWidget> createState() => _CalendarWidgetState();
@@ -100,19 +102,26 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     return days;
   }
 
+  refresh(String day) {
+    if (day != "") {
+      DateTime newDate =
+          DateTime(widget.now.year, widget.now.month, int.parse(day));
+      widget.notifyParent(newDate);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     List<DayModel> days = getDaysInMonth(context);
-    return Expanded(
-        child: Column(
+    return Column(
       children: [
         Container(
             padding: const EdgeInsets.all(3.0),
             decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.secondary,
                 borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10.0),
-                    topRight: Radius.circular(10.0))),
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0))),
             child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -146,65 +155,75 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                         fontWeight: FontWeight.bold,
                       )));
             })),
-        Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            textBaseline: TextBaseline.alphabetic,
-            children: List<Widget>.generate(6, (weekIndex) {
-              List<DayModel> week = days.sublist(
-                  weekIndex * DateTime.daysPerWeek,
-                  (weekIndex * DateTime.daysPerWeek) + DateTime.daysPerWeek);
+        Expanded(
+            child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                textBaseline: TextBaseline.alphabetic,
+                children: List<Widget>.generate(6, (weekIndex) {
+                  List<DayModel> week = days.sublist(
+                      weekIndex * DateTime.daysPerWeek,
+                      (weekIndex * DateTime.daysPerWeek) +
+                          DateTime.daysPerWeek);
 
-              return Row(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  textBaseline: TextBaseline.alphabetic,
-                  children:
-                      List<Widget>.generate(DateTime.daysPerWeek, (index) {
-                    return Expanded(
-                        child: GestureDetector(
-                            child: Container(
-                                padding: const EdgeInsets.all(3.0),
-                                decoration: BoxDecoration(
-                                    color: week[index].day ==
-                                            widget.now.day.toString()
-                                        ? Theme.of(context)
-                                            .colorScheme
-                                            .secondary
-                                        : null,
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    border: week[index].border
-                                        ? Border.all(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary)
-                                        : null),
-                                child: Column(children: [
-                                  Container(
-                                      margin: const EdgeInsets.only(right: 20),
-                                      child: Text(
-                                        week[index].day,
-                                        style: TextStyle(
-                                          color: week[index].color,
-                                        ),
-                                      )),
-                                  Container(
-                                      margin: const EdgeInsets.only(left: 10),
-                                      child: Text(
-                                        week[index].amlich,
-                                        style: TextStyle(
-                                          fontSize: Theme.of(context)
-                                              .textTheme
-                                              .labelSmall
-                                              ?.fontSize,
-                                          color: week[index].color,
-                                        ),
-                                      )),
-                                ]))));
-                  }));
-            })),
+                  return Expanded(
+                      child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: List<Widget>.generate(DateTime.daysPerWeek,
+                              (index) {
+                            return Expanded(
+                                child: FittedBox(
+                                    child: GestureDetector(
+                                        onTap: () => refresh(week[index].day),
+                                        child: Container(
+                                            padding: const EdgeInsets.all(3.0),
+                                            decoration: BoxDecoration(
+                                                color: week[index].day ==
+                                                        widget.now.day
+                                                            .toString()
+                                                    ? Theme.of(context)
+                                                        .colorScheme
+                                                        .secondary
+                                                    : null,
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(5.0)),
+                                                border: week[index].border
+                                                    ? Border.all(
+                                                        color: Theme.of(context)
+                                                            .colorScheme
+                                                            .secondary)
+                                                    : null),
+                                            child: Column(children: [
+                                              Container(
+                                                  margin: const EdgeInsets.only(
+                                                      right: 20),
+                                                  child: Text(
+                                                    week[index].day,
+                                                    style: TextStyle(
+                                                      color: week[index].color,
+                                                    ),
+                                                  )),
+                                              Container(
+                                                  margin: const EdgeInsets.only(
+                                                      left: 10),
+                                                  child: Text(
+                                                    week[index].amlich,
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          Theme.of(context)
+                                                              .textTheme
+                                                              .labelSmall
+                                                              ?.fontSize,
+                                                      color: week[index].color,
+                                                    ),
+                                                  )),
+                                            ])))));
+                          })));
+                }))),
       ],
-    ));
+    );
   }
 }

@@ -29,8 +29,7 @@ class _DayWidgetState extends State<DayWidget> {
     final tietKhi = getTietKhi(jd);
     final dayEvent = getDayInfo(lunarDay, lunarMonth);
     final gioHoangDao = getGioHoangDao(jd);
-    return Expanded(
-        child: Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
@@ -81,6 +80,6 @@ class _DayWidgetState extends State<DayWidget> {
                   maxLines: 2,
                 ))),
       ],
-    ));
+    );
   }
 }

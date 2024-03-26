@@ -1,7 +1,6 @@
 import 'package:chatapp/l10n/l10n.dart';
 import 'package:chatapp/src/screens/auth/bloc/authentication_bloc.dart';
 import 'package:chatapp/src/screens/auth/sign_up.dart';
-import 'package:chatapp/src/screens/home/home.dart';
 import 'package:chatapp/src/utils/ball_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

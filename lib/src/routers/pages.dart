@@ -3,7 +3,6 @@ import 'package:chatapp/src/screens/auth/sign_in.dart';
 import 'package:chatapp/src/screens/auth/sign_up.dart';
 import 'package:chatapp/src/screens/home/home.dart';
 import 'package:chatapp/src/screens/home/main.dart';
-import 'package:chatapp/src/screens/welcome/welcome.dart';
 import 'package:chatapp/src/routers/routers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
