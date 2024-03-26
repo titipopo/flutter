@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-enum SampleItem { itemOne, itemTwo, itemThree }
 enum Menu { preview, share, getLink, remove, download }
 
 class SongsList extends StatefulWidget {
@@ -11,13 +10,14 @@ class SongsList extends StatefulWidget {
 }
 
 class _SongsListState extends State<SongsList> {
-  SampleItem? selectedMenu;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
         return ListTile(
+          hoverColor: Colors.amber,
+          onTap: ()=>{ print('Tapped')},
           trailing: PopupMenuButton<Menu>(
             popUpAnimationStyle: AnimationStyle.noAnimation,
             icon: const Icon(Icons.more_vert),

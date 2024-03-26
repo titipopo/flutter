@@ -7,7 +7,7 @@ import 'package:chatapp/src/utils/settings_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum Menu { en, vi, jp }
+enum Language { en, vi, jp }
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -98,31 +98,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         label: AppLocalizations.of(context).language,
                         child: Row(children: [
                           Text(language),
-                          PopupMenuButton<Menu>(
+                          PopupMenuButton<Language>(
                             popUpAnimationStyle: AnimationStyle.noAnimation,
                             icon: const Icon(Icons.navigate_next),
-                            onSelected: (Menu item) {
+                            onSelected: (Language item) {
                               switch (item) {
-                                case Menu.en:
+                                case Language.en:
                                   context.read<LanguageCubit>().toEnglish();
-                                case Menu.vi:
+                                case Language.vi:
                                   context.read<LanguageCubit>().toVietNamese();
-                                case Menu.jp:
+                                case Language.jp:
                                   context.read<LanguageCubit>().toJapanese();
                               }
                             },
                             itemBuilder: (BuildContext context) =>
-                                <PopupMenuEntry<Menu>>[
-                              PopupMenuItem<Menu>(
-                                value: Menu.en,
+                                <PopupMenuEntry<Language>>[
+                              PopupMenuItem<Language>(
+                                value: Language.en,
                                 child: Text(AppLocalizations.of(context).en),
                               ),
-                              PopupMenuItem<Menu>(
-                                value: Menu.vi,
+                              PopupMenuItem<Language>(
+                                value: Language.vi,
                                 child: Text(AppLocalizations.of(context).vi),
                               ),
-                              PopupMenuItem<Menu>(
-                                value: Menu.jp,
+                              PopupMenuItem<Language>(
+                                value: Language.jp,
                                 child: Text(AppLocalizations.of(context).jp),
                               ),
                             ],
