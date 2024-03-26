@@ -1,4 +1,4 @@
-import 'package:chatapp/src/screens/orthers/now_playing_%20model._screen.dart';
+import 'package:chatapp/src/screens/orthers/now_playing_%20modal_screen.dart';
 import 'package:flutter/material.dart';
 
 class NowPlaying extends StatelessWidget {
