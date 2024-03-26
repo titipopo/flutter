@@ -53,5 +53,12 @@
   "musics": "MUSICS",
   "en": "English",
   "vi": "VietNamese",
-  "jp": "Japanese"
+  "jp": "Japanese",
+  "language": "Language",
+  "languageSetting": "Language Settings",
+  "about": "About",
+  "version": "Version",
+  "auth": "Author",
+  "theme": "Theme Mode",
+  "darkTheme": "Dark Mode"
 }

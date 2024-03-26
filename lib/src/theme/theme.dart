@@ -117,8 +117,8 @@ abstract class AppTheme {
           onError: Color(0xFFF44336),
           background: Color(0xFF1F2937),
           onBackground: Color(0xFF1F2937),
-          surface: Color(0xFFF9FAFB),
-          onSurface: Color(0xFFF9FAFB),
+          surface: Color(0xFF1F2937),
+          onSurface: Color(0xFF1F2937),
           tertiary: Color(0xFF2196F3),
           onTertiary: Color(0xFF8b9cb5),
           outline: Color(0xFF0891B2),
@@ -204,6 +204,18 @@ abstract class AppTheme {
               borderRadius: BorderRadius.all(
                 Radius.circular(20.0),
               )),
+          iconColor: Color(0xFF0891B2),
+        ),
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Color(0xFFFF6347),
+          indicatorSize: TabBarIndicatorSize.tab,
+          labelColor: Color(0xFF0891B2),
+          labelStyle: TextStyle(fontSize: 15),
+          unselectedLabelColor: Color(0xFFD1D5DB),
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFF111827),
+          foregroundColor: Color(0xFFF9FAFB),
         ),
       );
 }

@@ -17,5 +17,12 @@
   "musics": "NHẠC",
   "en": "Tiếng Anh",
   "vi": "Tiếng Việt",
-  "jp": "Tiếng Nhật"
+  "jp": "Tiếng Nhật",
+  "language": "Ngôn Ngữ",
+  "languageSetting": "Cài Đặt Ngôn Ngữ",
+  "about": "Thông Tin",
+  "version": "Phiên Bản",
+  "auth": "Tác Giả",
+  "theme": "Thay Đổi Chủ Đề",
+  "darkTheme": "Chế Độ Tối"
 }

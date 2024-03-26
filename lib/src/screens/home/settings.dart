@@ -29,7 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       case "jp":
         return AppLocalizations.of(context).jp;
       default:
-        return AppLocalizations.of(context).vi;
+        return AppLocalizations.of(context).en;
     }
   }
 
@@ -52,7 +52,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('Theme Mode',
+                      Text(AppLocalizations.of(context).theme,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Theme.of(context)
@@ -63,7 +63,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   SettingsContainer(child: [
                     Section(
-                      label: 'Dark Mode',
+                      label: AppLocalizations.of(context).darkTheme,
                       child: Switch(
                         value: themeMode == ThemeMode.dark ? true : false,
                         thumbIcon: MaterialStatePropertyAll(Icon(
@@ -84,7 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('Language Settings',
+                      Text(AppLocalizations.of(context).languageSetting,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Theme.of(context)
@@ -95,7 +95,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   SettingsContainer(child: [
                     Section(
-                        label: 'Language',
+                        label: AppLocalizations.of(context).language,
                         child: Row(children: [
                           Text(language),
                           PopupMenuButton<Menu>(
@@ -132,7 +132,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('About',
+                      Text(AppLocalizations.of(context).about,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Theme.of(context)
@@ -141,12 +141,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   .fontSize)),
                     ],
                   ),
-                  const SettingsContainer(child: [
-                    Section(label: 'Version', child: Text('1.0')),
-                    Divider(),
+                  SettingsContainer(child: [
                     Section(
-                      label: 'Author',
-                      child: Text('From Titipopo with ♡'),
+                        label: AppLocalizations.of(context).version,
+                        child: const Text('1.0')),
+                    const Divider(),
+                    Section(
+                      label: AppLocalizations.of(context).auth,
+                      child: const Text('From Titipopo with ♡'),
                     )
                   ]),
                 ],
