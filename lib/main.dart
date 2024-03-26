@@ -1,5 +1,6 @@
 import 'package:chatapp/app.dart';
 import 'package:chatapp/firebase_options.dart';
+import 'package:chatapp/src/cubit/language_cubit.dart';
 import 'package:chatapp/src/screens/auth/bloc/authentication_bloc.dart';
 import 'package:chatapp/src/cubit/theme_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,5 +16,6 @@ void main() async {
   runApp(MultiBlocProvider(providers: [
     BlocProvider<AuthenticationBloc>(create: (_) => AuthenticationBloc()),
     BlocProvider<ThemeCubit>(create: (_) => ThemeCubit(prefs: prefs)),
+    BlocProvider<LanguageCubit>(create: (_) => LanguageCubit(prefs: prefs)),
   ], child: const App()));
 }

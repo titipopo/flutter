@@ -32,7 +32,7 @@
     "description": "Forgot password"
   },
   "newHere": "New Here? Register",
-  "@register": {
+  "@newHere": {
     "description": "Create acount"
   },
   "login": "Log in",
@@ -44,7 +44,14 @@
     "description": "Register"
   },
   "hasAccount": "Already have an account? Log in",
-  "@login": {
+  "@hasAccount": {
     "description": "Already have an account? Log in"
-  }
+  },
+  "home": "HOME",
+  "settings": "SETTINGS",
+  "chat": "CHAT",
+  "musics": "MUSICS",
+  "en": "English",
+  "vi": "VietNamese",
+  "jp": "Japanese"
 }

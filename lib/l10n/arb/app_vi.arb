@@ -10,5 +10,12 @@
   "newHere": "Chưa Có Tài Khoản? Đăng Ký",
   "login": "Đăng Nhập",
   "register": "Đăng Ký",
-  "hasAccount": "Đã Có Tài Khoản? Đăng Nhập"
+  "hasAccount": "Đã Có Tài Khoản? Đăng Nhập",
+  "home": "TRANG CHỦ",
+  "settings": "CÀI ĐẶT",
+  "chat": "TRÒ CHUYỆN",
+  "musics": "NHẠC",
+  "en": "Tiếng Anh",
+  "vi": "Tiếng Việt",
+  "jp": "Tiếng Nhật"
 }

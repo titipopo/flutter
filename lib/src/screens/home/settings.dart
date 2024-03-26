@@ -1,3 +1,5 @@
+import 'package:chatapp/l10n/l10n.dart';
+import 'package:chatapp/src/cubit/language_cubit.dart';
 import 'package:chatapp/src/cubit/theme_cubit.dart';
 import 'package:chatapp/src/utils/page_name.dart';
 import 'package:chatapp/src/utils/section.dart';
@@ -5,7 +7,7 @@ import 'package:chatapp/src/utils/settings_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum Menu { english, vietmamese }
+enum Menu { en, vi, jp }
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -16,14 +18,29 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   bool light = true;
+  String language = "";
+
+  String getlanguageName(String locale) {
+    switch (locale) {
+      case "en":
+        return AppLocalizations.of(context).en;
+      case "vi":
+        return AppLocalizations.of(context).vi;
+      case "jp":
+        return AppLocalizations.of(context).jp;
+      default:
+        return AppLocalizations.of(context).vi;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     ThemeMode themeMode = context.read<ThemeCubit>().state;
+    language = getlanguageName(Localizations.localeOf(context).toString());
     return SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(children: [
-          const PageName(name: 'Settings'),
+          PageName(name: AppLocalizations.of(context).settings),
           const SizedBox(
             height: 10,
           ),
@@ -80,20 +97,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     Section(
                         label: 'Language',
                         child: Row(children: [
-                          Text(Localizations.localeOf(context).toString()),
+                          Text(language),
                           PopupMenuButton<Menu>(
                             popUpAnimationStyle: AnimationStyle.noAnimation,
                             icon: const Icon(Icons.navigate_next),
-                            onSelected: (Menu item) {},
+                            onSelected: (Menu item) {
+                              switch (item) {
+                                case Menu.en:
+                                  context.read<LanguageCubit>().toEnglish();
+                                case Menu.vi:
+                                  context.read<LanguageCubit>().toVietNamese();
+                                case Menu.jp:
+                                  context.read<LanguageCubit>().toJapanese();
+                              }
+                            },
                             itemBuilder: (BuildContext context) =>
                                 <PopupMenuEntry<Menu>>[
-                              const PopupMenuItem<Menu>(
-                                value: Menu.english,
-                                child: Text('English'),
+                              PopupMenuItem<Menu>(
+                                value: Menu.en,
+                                child: Text(AppLocalizations.of(context).en),
                               ),
-                              const PopupMenuItem<Menu>(
-                                value: Menu.vietmamese,
-                                child: Text('Vietnamese'),
+                              PopupMenuItem<Menu>(
+                                value: Menu.vi,
+                                child: Text(AppLocalizations.of(context).vi),
+                              ),
+                              PopupMenuItem<Menu>(
+                                value: Menu.jp,
+                                child: Text(AppLocalizations.of(context).jp),
                               ),
                             ],
                           ),
