@@ -40,6 +40,10 @@ class _MainScreenState extends State<MainScreen> {
               icon: Icon(Icons.settings),
               label: 'Settings',
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profiles',
+            ),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
