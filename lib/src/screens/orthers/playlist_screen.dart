@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class PlaylistScreen extends StatefulWidget {
@@ -8,7 +10,7 @@ class PlaylistScreen extends StatefulWidget {
 }
 
 class _PlaylistScreenState extends State<PlaylistScreen> {
-  TextEditingController _textFieldController = TextEditingController();
+  final TextEditingController _textFieldController = TextEditingController();
 
   Future<void> _displayTextInputDialog(BuildContext context) async {
     return showDialog(
@@ -40,7 +42,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             ElevatedButton(
               child: const Text('OK'),
               onPressed: () {
-                print(_textFieldController.text);
+                log(_textFieldController.text);
                 Navigator.pop(context);
               },
             ),

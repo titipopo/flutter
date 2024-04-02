@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:developer';
+
 import 'package:flutter/widgets.dart';
 
 class AppLifecycleObserver extends StatefulWidget {
@@ -31,7 +33,7 @@ class AppLifecycleObserverState extends State<AppLifecycleObserver>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    print(() => 'didChangeAppLifecycleState: $state');
+    log('didChangeAppLifecycleState: $state');
     lifecycleListenable.value = state;
   }
 
@@ -45,6 +47,6 @@ class AppLifecycleObserverState extends State<AppLifecycleObserver>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    print('Subscribed to app lifecycle updates');
+    log('Subscribed to app lifecycle updates');
   }
 }

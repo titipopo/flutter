@@ -99,6 +99,20 @@ class _CalendarWidgetState extends State<CalendarWidget> {
       ));
     }
 
+    final sixWeek = days.length;
+    if (sixWeek < 42) {
+      for (int i = 0; i < 42 - sixWeek; i++) {
+        days.add(DayModel(
+          day: '',
+          disabled: true,
+          amlich: '',
+          color: null,
+          border: false,
+        ));
+      }
+
+    }
+
     return days;
   }
 

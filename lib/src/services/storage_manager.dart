@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageManager {
@@ -9,16 +11,16 @@ class StorageManager {
     } else if (value is bool) {
       prefs.setBool(key, value);
     } else {
-      print("Invalid Type");
+      log("Invalid Type");
     }
   }
 
-  static Future<dynamic> readData(SharedPreferences prefs, String key) {
+  static dynamic readData(SharedPreferences prefs, String key) {
     dynamic obj;
     try {
       obj = prefs.get(key);
     } catch (e) {
-      print('error');
+      log('error');
     }
     return obj;
   }

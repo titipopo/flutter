@@ -1,6 +1,5 @@
 import 'package:chatapp/l10n/l10n.dart';
-import 'package:chatapp/src/cubit/language_cubit.dart';
-import 'package:chatapp/src/cubit/theme_cubit.dart';
+import 'package:chatapp/src/cubit/settings_cubit.dart';
 import 'package:chatapp/src/utils/page_name.dart';
 import 'package:chatapp/src/utils/section.dart';
 import 'package:chatapp/src/utils/settings_container.dart';
@@ -35,7 +34,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeMode themeMode = context.read<ThemeCubit>().state;
+    ThemeMode themeMode = context.read<SettingsCubit>().state.themeMode;
     language = getlanguageName(Localizations.localeOf(context).toString());
     return SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -75,7 +74,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             light = value;
                           });
                           context
-                              .read<ThemeCubit>()
+                              .read<SettingsCubit>()
                               .toggleTheme(isDarkTheme: light);
                         },
                       ),
@@ -104,11 +103,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             onSelected: (Language item) {
                               switch (item) {
                                 case Language.en:
-                                  context.read<LanguageCubit>().toEnglish();
+                                  context.read<SettingsCubit>().changeLanguage(item.name);
                                 case Language.vi:
-                                  context.read<LanguageCubit>().toVietNamese();
+                                  context.read<SettingsCubit>().changeLanguage(item.name);
                                 case Language.jp:
-                                  context.read<LanguageCubit>().toJapanese();
+                                  context.read<SettingsCubit>().changeLanguage(item.name);
                               }
                             },
                             itemBuilder: (BuildContext context) =>

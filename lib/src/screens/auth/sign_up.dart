@@ -1,5 +1,5 @@
 import 'package:chatapp/l10n/l10n.dart';
-import 'package:chatapp/src/screens/auth/bloc/authentication_bloc.dart';
+import 'package:chatapp/src/bloc/auth_bloc.dart';
 import 'package:chatapp/src/screens/auth/sign_in.dart';
 import 'package:chatapp/src/utils/ball_style.dart';
 import 'package:flutter/material.dart';
@@ -109,17 +109,15 @@ class _SignupScreenState extends State<SignupScreen> {
                                 },
                               ),
                               const SizedBox(height: 20),
-                              BlocConsumer<AuthenticationBloc,
-                                  AuthenticationState>(
+                              BlocConsumer<AuthBloc, AuthState>(
                                 listener: (context, state) {
-                                  if (state is AuthenticationSuccessState) {
+                                  if (state.status == AuthStatus.signup) {
                                     Navigator.pushNamedAndRemoveUntil(
                                       context,
                                       SigninScreen.id,
                                       (route) => false,
                                     );
-                                  } else if (state
-                                      is AuthenticationFailureState) {
+                                  } else if (state.status == AuthStatus.error) {
                                     showDialog(
                                         context: context,
                                         builder: (context) {
@@ -136,9 +134,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                     child: ElevatedButton(
                                       onPressed: () {
                                         if (!validateAndSave()) return;
-                                        BlocProvider.of<AuthenticationBloc>(
-                                                context)
-                                            .add(
+                                        BlocProvider.of<AuthBloc>(context).add(
                                           SignUp(
                                             _emailController.text.trim(),
                                             _passwordController.text.trim(),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 enum Menu { preview, share, getLink, remove, download }
@@ -17,7 +19,7 @@ class _SongsListState extends State<SongsList> {
       itemBuilder: (context, index) {
         return ListTile(
           hoverColor: Colors.amber,
-          onTap: ()=>{ print('Tapped')},
+          onTap: ()=>{ log('Tapped')},
           trailing: PopupMenuButton<Menu>(
             popUpAnimationStyle: AnimationStyle.noAnimation,
             icon: const Icon(Icons.more_vert),

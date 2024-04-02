@@ -29,7 +29,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   }
 
   List<Widget> indicator() => List<Widget>.generate(
-      3,
+      2,
       (index) => Container(
             margin: const EdgeInsets.symmetric(horizontal: 3.0),
             height: 10.0,

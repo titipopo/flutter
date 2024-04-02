@@ -1,9 +1,10 @@
+import 'dart:developer';
+
 import 'package:chatapp/src/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  static const _authPersistenceKey = 'isAuth';
 
   /// create user
   Future<UserModel?> signUp(
@@ -25,7 +26,7 @@ class AuthService {
         );
       }
     } on FirebaseAuthException catch (e) {
-      print(e.toString());
+      log(e.toString());
     }
     return null;
   }
@@ -50,7 +51,7 @@ class AuthService {
         );
       }
     } on FirebaseAuthException catch (e) {
-      print(e.toString());
+      log(e.toString());
     }
     return null;
   }
