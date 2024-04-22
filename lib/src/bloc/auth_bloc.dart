@@ -1,8 +1,9 @@
 import 'dart:developer';
 
 import 'package:chatapp/src/models/user.dart';
-import 'package:chatapp/src/services/authentication.dart';
+import 'package:chatapp/core/services/authentication.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'auth_event.dart';

@@ -43,10 +43,23 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
-  just_audio: ^0.9.36
-  sqflite: ^2.3.2
-  path: ^1.9.0
-  cloud_firestore: ^4.15.10
+  just_audio: any
+  sqflite: any
+  path: any
+  cloud_firestore: any
+  go_router: any
+  collection: any
+  hive: any
+  injectable: any
+  google_sign_in: any
+  get_it: any
+  path_provider: any
+  hive_flutter: any
+  font_awesome_flutter: any
+  google_fonts: any
+  audioplayers: any
+  record: any
+  firebase_storage: any
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +71,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: any
+  build_runner: any
+  injectable_generator: any
+  hive_generator: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

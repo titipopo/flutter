@@ -1,56 +1,22 @@
 {
   "hello": "Welcome Back!",
-  "@hello": {
-    "description": "The conventional newborn programmer greeting"
-  },
   "email": "Email",
-  "@email": {
-    "description": "Email"
-  },
   "emailHint": "Enter your email",
-  "@emailHint": {
-    "description": "Email placeholder"
-  },
   "emailError": "Please fill Email",
-  "@emailError": {
-    "description": "Email not valid"
-  },
   "password": "Password",
-  "@password": {
-    "description": "Password"
-  },
   "passwordHint": "Enter your password",
-  "@passwordHint": {
-    "description": "Password placeholder"
-  },
   "passwordError": "Please fill Password",
-  "@passwordError": {
-    "description": "Password not valid"
-  },
   "forgotPassword": "Forgot Password?",
-  "@forgotPassword": {
-    "description": "Forgot password"
-  },
   "newHere": "New Here? Register",
-  "@newHere": {
-    "description": "Create acount"
-  },
   "login": "Log in",
-  "@login": {
-    "description": "Log in"
-  },
   "register": "Register",
-  "@login": {
-    "description": "Register"
-  },
   "hasAccount": "Already have an account? Log in",
-  "@hasAccount": {
-    "description": "Already have an account? Log in"
-  },
   "home": "HOME",
+  "calendar": "CALENDAR",
   "settings": "SETTINGS",
-  "chat": "CHAT",
+  "chat": "CONVERSATIONS",
   "musics": "MUSICS",
+  "profiles": "PROFILES",
   "en": "English",
   "vi": "VietNamese",
   "jp": "Japanese",
@@ -60,5 +26,17 @@
   "version": "Version",
   "auth": "Author",
   "theme": "Theme Mode",
-  "darkTheme": "Dark Mode"
+  "darkTheme": "Dark Mode",
+  "profileName": "Name",
+  "profileEmail": "Email",
+  "profileId": "UID",
+  "profileLastLogin": "Last Login",
+  "profileJoinedOn": "Joined On",
+  "profileLogout": "Log out",
+  "profileEdit": "Edit",
+  "profileUpdate": "Update",
+  "moreProfile": "Profile",
+  "moreSettings": "Settings",
+  "dateFormatYMD": "yyyy-MM-dd",
+  "dateFormatYMDE": "yyyy-MM-dd (EEE)"
 }

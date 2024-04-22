@@ -1,4 +1,4 @@
-import 'package:chatapp/src/screens/auth/sign_in.dart';
+import 'package:chatapp/app/features/auth/ui/signin.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {

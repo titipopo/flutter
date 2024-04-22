@@ -1,4 +1,4 @@
-class ConstStrings{
+class SharedPreferencesKey {
   static const String saveThemeModeKey = 'themeMode';
   static const String lightMode = 'light';
   static const String darkMode = 'dark';

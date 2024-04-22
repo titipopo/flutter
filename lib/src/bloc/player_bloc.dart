@@ -2,7 +2,7 @@
 import 'dart:async';
 
 import 'package:chatapp/src/models/audio.dart';
-import 'package:chatapp/src/services/db.dart';
+import 'package:chatapp/core/services/db.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

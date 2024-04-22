@@ -14,11 +14,16 @@ abstract class AppTheme {
           onError: Color(0xFFF44336),
           background: Color(0xFFF3F4F6),
           onBackground: Color(0xFFF3F4F6),
-          surface: Color(0xFFFFFFFF),
-          onSurface: Color(0xFFFFFFFF),
+          surface: Color(0xFF111827),
+          onSurface: Color(0xFF111827),
           tertiary: Color(0xFF2196F3),
           onTertiary: Color(0xFF8b9cb5),
           outline: Color(0xFF0891B2),
+          surfaceTint: Color(0xFFFF6347),
+          scrim: Color(0xFF8B9CB5),
+        ),
+        cardTheme: const CardTheme(
+          color: Color(0xFFFFFFFF),
         ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(fontSize: 64, color: Color(0xFF111827)),
@@ -32,7 +37,7 @@ abstract class AppTheme {
           titleSmall: TextStyle(fontSize: 20, color: Color(0xFF111827)),
           labelLarge: TextStyle(fontSize: 20, color: Color(0xFF111827)),
           labelMedium: TextStyle(fontSize: 16, color: Color(0xFF111827)),
-          labelSmall: TextStyle(fontSize: 12, color: Color(0xFF111827)),
+          labelSmall: TextStyle(fontSize: 14, color: Color(0xFF111827)),
           bodyLarge: TextStyle(fontSize: 24, color: Color(0xFF111827)),
           bodyMedium: TextStyle(fontSize: 20, color: Color(0xFF111827)),
           bodySmall: TextStyle(fontSize: 16, color: Color(0xFF111827)),
@@ -41,6 +46,9 @@ abstract class AppTheme {
         inputDecorationTheme: InputDecorationTheme(
           suffixIconColor: const Color(0xFF0891B2),
           prefixIconColor: const Color(0xFF0891B2),
+          labelStyle: const TextStyle(fontSize: 20, color: Color(0xFF111827)),
+          hintStyle: const TextStyle(fontSize: 16, color: Color(0xFF8B9CB5)),
+          contentPadding: const EdgeInsets.all(15.0),
           border: const OutlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF8FD7E9), width: 2.0)),
           errorBorder: OutlineInputBorder(
@@ -65,7 +73,7 @@ abstract class AppTheme {
         iconTheme: const IconThemeData(color: Color(0xFF0891B2), size: 40),
         dividerTheme: const DividerThemeData(color: Color(0xFF0891B2)),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFFFFFFF),
           elevation: 0,
           enableFeedback: false,
           showSelectedLabels: false,
@@ -83,12 +91,12 @@ abstract class AppTheme {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: const Color(0xFF111827),
+              foregroundColor: const Color(0xFF111827),
+              backgroundColor: const Color(0xFFFFFFFF),
               elevation: 0,
               shadowColor: const Color(0xFF1F2937),
               textStyle: const TextStyle(
-                  color: Colors.white,
+                  color: Color(0xFFFFFFFF),
                   fontWeight: FontWeight.bold,
                   fontSize: 25)),
         ),
@@ -102,6 +110,34 @@ abstract class AppTheme {
                 Radius.circular(20.0),
               )),
         ),
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Color(0xFFFF6347),
+          indicatorSize: TabBarIndicatorSize.tab,
+          labelColor: Color(0xFF0891B2),
+          labelStyle: TextStyle(fontSize: 15),
+          unselectedLabelColor: Color(0xFF4B5563),
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFF111827),
+          foregroundColor: Color(0xFFF9FAFB),
+        ),
+        sliderTheme: const SliderThemeData(
+          activeTrackColor: Color(0xFF0891B2),
+          inactiveTrackColor: Color(0x60000000),
+          thumbColor: Color(0xFF0891B2),
+          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10),
+          overlayShape: RoundSliderOverlayShape(overlayRadius: 0),
+          overlayColor: Color(0xFF111827),
+        ),
+        bottomSheetTheme:
+            const BottomSheetThemeData(backgroundColor: Colors.transparent),
+        listTileTheme: const ListTileThemeData(
+          iconColor: Color(0xFF0891B2),
+        ),
+        searchBarTheme: const SearchBarThemeData(
+            textStyle: MaterialStatePropertyAll<TextStyle>(TextStyle(
+          color: Color(0xFF111827),
+        ))),
       );
 
   static ThemeData get darkTheme => ThemeData(
@@ -117,11 +153,16 @@ abstract class AppTheme {
           onError: Color(0xFFF44336),
           background: Color(0xFF1F2937),
           onBackground: Color(0xFF1F2937),
-          surface: Color(0xFF1F2937),
-          onSurface: Color(0xFF1F2937),
+          surface: Color(0xFFF9FAFB),
+          onSurface: Color(0xFFF9FAFB),
           tertiary: Color(0xFF2196F3),
           onTertiary: Color(0xFF8b9cb5),
           outline: Color(0xFF0891B2),
+          surfaceTint: Color(0xFFFF6347),
+          scrim: Color(0xFF8B9CB5),
+        ),
+        cardTheme: const CardTheme(
+          color: Color(0xFF111827),
         ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(fontSize: 64, color: Color(0xFFF9FAFB)),
@@ -135,7 +176,7 @@ abstract class AppTheme {
           titleSmall: TextStyle(fontSize: 20, color: Color(0xFFF9FAFB)),
           labelLarge: TextStyle(fontSize: 20, color: Color(0xFFF9FAFB)),
           labelMedium: TextStyle(fontSize: 16, color: Color(0xFFF9FAFB)),
-          labelSmall: TextStyle(fontSize: 16, color: Color(0xFFF9FAFB)),
+          labelSmall: TextStyle(fontSize: 14, color: Color(0xFFF9FAFB)),
           bodyLarge: TextStyle(fontSize: 24, color: Color(0xFFF9FAFB)),
           bodyMedium: TextStyle(fontSize: 20, color: Color(0xFFF9FAFB)),
           bodySmall: TextStyle(fontSize: 16, color: Color(0xFFF9FAFB)),
@@ -144,6 +185,9 @@ abstract class AppTheme {
         inputDecorationTheme: InputDecorationTheme(
           suffixIconColor: const Color(0xFF0891B2),
           prefixIconColor: const Color(0xFF0891B2),
+          labelStyle: const TextStyle(fontSize: 20, color: Color(0xFFF9FAFB)),
+          hintStyle: const TextStyle(fontSize: 16, color: Color(0xFF8B9CB5)),
+          contentPadding: const EdgeInsets.all(15.0),
           border: const OutlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF8FD7E9), width: 2.0)),
           errorBorder: OutlineInputBorder(
@@ -211,11 +255,28 @@ abstract class AppTheme {
           indicatorSize: TabBarIndicatorSize.tab,
           labelColor: Color(0xFF0891B2),
           labelStyle: TextStyle(fontSize: 15),
-          unselectedLabelColor: Color(0xFFD1D5DB),
+          unselectedLabelColor: Color(0xFF4B5563),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color(0xFF111827),
           foregroundColor: Color(0xFFF9FAFB),
         ),
+        sliderTheme: const SliderThemeData(
+          activeTrackColor: Color(0xFF0891B2),
+          inactiveTrackColor: Color(0x60000000),
+          thumbColor: Color(0xFF0891B2),
+          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10),
+          overlayShape: RoundSliderOverlayShape(overlayRadius: 0),
+          overlayColor: Color(0xFF111827),
+        ),
+        bottomSheetTheme:
+            const BottomSheetThemeData(backgroundColor: Colors.transparent),
+        listTileTheme: const ListTileThemeData(
+          iconColor: Color(0xFF0891B2),
+        ),
+        searchBarTheme: const SearchBarThemeData(
+            textStyle: MaterialStatePropertyAll<TextStyle>(TextStyle(
+          color: Color(0xFF111827),
+        ))),
       );
 }
