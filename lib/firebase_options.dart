@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDZENSQj6ucpzna9LouizC-n9VBbAkz9eI',
-    appId: '1:389703859620:web:27c0d7bf7d964c005c1531',
-    messagingSenderId: '389703859620',
-    projectId: 'navigation-18feb',
-    authDomain: 'navigation-18feb.firebaseapp.com',
-    storageBucket: 'navigation-18feb.appspot.com',
+    apiKey: 'add your information',
+    appId: 'add your information',
+    messagingSenderId: 'add your information',
+    projectId: 'add your information',
+    authDomain: 'add your information',
+    storageBucket: 'add your information',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD_CDGXfgnRcrQdOkRNVcd0ocvY8o04AGo',
-    appId: '1:389703859620:android:8f98dddf7c6d67a55c1531',
-    messagingSenderId: '389703859620',
-    projectId: 'navigation-18feb',
-    authDomain: 'navigation-18feb.firebaseapp.com',
-    storageBucket: 'navigation-18feb.appspot.com',
+    apiKey: 'add your information',
+    appId: 'add your information',
+    messagingSenderId: 'add your information',
+    projectId: 'add your information',
+    authDomain: 'add your information',
+    storageBucket: 'add your information',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDZENSQj6ucpzna9LouizC-n9VBbAkz9eI',
-    appId: '1:389703859620:web:27c0d7bf7d964c005c1531',
-    messagingSenderId: '389703859620',
-    projectId: 'navigation-18feb',
-    authDomain: 'navigation-18feb.firebaseapp.com',
-    storageBucket: 'navigation-18feb.appspot.com',
+    apiKey: 'add your information',
+    appId: 'add your information',
+    messagingSenderId: 'add your information',
+    projectId: 'add your information',
+    authDomain: 'add your information',
+    storageBucket: 'add your information',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDZENSQj6ucpzna9LouizC-n9VBbAkz9eI',
-    appId: '1:389703859620:web:27c0d7bf7d964c005c1531',
-    messagingSenderId: '389703859620',
-    projectId: 'navigation-18feb',
-    authDomain: 'navigation-18feb.firebaseapp.com',
-    storageBucket: 'navigation-18feb.appspot.com',
+   apiKey: 'add your information',
+    appId: 'add your information',
+    messagingSenderId: 'add your information',
+    projectId: 'add your information',
+    authDomain: 'add your information',
+    storageBucket: 'add your information',
   );
 }
